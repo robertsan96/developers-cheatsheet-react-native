@@ -1,54 +1,30 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import articleBlockType from "../constants/article-block";
-import SyntaxHighlighter from "react-native-syntax-highlighter";
 import ArticleBlockWebView from "./ArticleBlockViewComponents/ArticleBlockWebView";
-import { GRAY, rgbaStringFromColor } from "../constants/colors";
+import ArticleBlockCodeView from "./ArticleBlockViewComponents/ArticleBlockCodeView";
+import ArticleBlockTextView from "./ArticleBlockViewComponents/ArticleBlockTextView";
+import ArticleBlockDefinitionListView from "./ArticleBlockViewComponents/ArticleBlockDefinitionListView";
 
 const ArticleBlockView = ({ block }) => {
   const typeText = () => {
     return (
       <View style={styles.blockWrapper}>
-        <Text>{block.data}</Text>
-      </View>
-    );
-  };
-  const typeTextHeading = () => {
-    return (
-      <View style={styles.blockWrapper}>
-        <Text style={styles.textHeading}>{block.data}</Text>
+        <ArticleBlockTextView block={block} />
       </View>
     );
   };
   const typeTextDefinitionList = () => {
     return (
       <View style={styles.blockWrapper}>
-        {block.data.map((d, index) => (
-          <View
-            style={{
-              ...styles.blockWrapperRow,
-              backgroundColor:
-                index % 2 === 0 ? rgbaStringFromColor(GRAY, 0.8) : ""
-            }}
-          >
-            <Text style={styles.textDefinitionElement}>{d.element}</Text>
-            {d.definition && <Text> - </Text>}
-            {d.definition && (
-              <Text style={styles.textDefinitionDefinition}>
-                {d.definition}
-              </Text>
-            )}
-          </View>
-        ))}
+        <ArticleBlockDefinitionListView block={block} />
       </View>
     );
   };
   const typeCode = () => {
     return (
       <View style={{ ...styles.blockWrapper, padding: 0 }}>
-        <SyntaxHighlighter language={block.language} highlighter="prism">
-          {block.data}
-        </SyntaxHighlighter>
+        <ArticleBlockCodeView block={block} />
       </View>
     );
   };
@@ -64,9 +40,8 @@ const ArticleBlockView = ({ block }) => {
   const getViewByBlockType = () => {
     switch (block.type) {
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT:
-        return typeText();
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING:
-        return typeTextHeading();
+        return typeText();
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST:
         return typeTextDefinitionList();
       case articleBlockType.ARTICLE_BLOCK_TYPE_CODE:
@@ -84,23 +59,6 @@ const ArticleBlockView = ({ block }) => {
 const styles = StyleSheet.create({
   blockWrapper: {
     padding: 10
-  },
-  blockWrapperRow: {
-    display: "flex",
-    flexDirection: "row",
-
-    alignItems: "stretch"
-  },
-  textHeading: {
-    fontSize: 18,
-    fontWeight: "bold"
-  },
-  textDefinitionElement: {
-    minWidth: 80,
-    fontWeight: "700"
-  },
-  textDefinitionDefinition: {
-    flex: 1
   }
 });
 
