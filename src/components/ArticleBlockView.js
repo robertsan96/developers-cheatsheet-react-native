@@ -5,55 +5,71 @@ import ArticleBlockWebView from "./ArticleBlockViewComponents/ArticleBlockWebVie
 import ArticleBlockCodeView from "./ArticleBlockViewComponents/ArticleBlockCodeView";
 import ArticleBlockTextView from "./ArticleBlockViewComponents/ArticleBlockTextView";
 import ArticleBlockDefinitionListView from "./ArticleBlockViewComponents/ArticleBlockDefinitionListView";
+import ArticleBlockSectionView from "./ArticleBlockViewComponents/ArticleBlockSectionView";
 
 const ArticleBlockView = ({ block }) => {
-  const typeText = () => {
+  const typeSection = forBlock => {
     return (
       <View style={styles.blockWrapper}>
-        <ArticleBlockTextView block={block} />
+        <ArticleBlockSectionView block={forBlock}>
+          <>
+            {forBlock.data.map(b => (
+              <View key={Math.random()}>{getViewByBlockType(b)}</View>
+            ))}
+          </>
+        </ArticleBlockSectionView>
       </View>
     );
   };
-  const typeTextDefinitionList = () => {
+  const typeText = forBlock => {
     return (
       <View style={styles.blockWrapper}>
-        <ArticleBlockDefinitionListView block={block} />
+        <ArticleBlockTextView block={forBlock} />
       </View>
     );
   };
-  const typeCode = () => {
+  const typeTextDefinitionList = forBlock => {
+    return (
+      <View style={styles.blockWrapper}>
+        <ArticleBlockDefinitionListView block={forBlock} />
+      </View>
+    );
+  };
+  const typeCode = forBlock => {
     return (
       <View style={{ ...styles.blockWrapper, padding: 0 }}>
-        <ArticleBlockCodeView block={block} />
+        <ArticleBlockCodeView block={forBlock} />
       </View>
     );
   };
 
-  const typeWebView = () => {
+  const typeWebView = forBlock => {
     return (
       <View style={styles.blockWrapper}>
-        <ArticleBlockWebView block={block} />
+        <ArticleBlockWebView block={forBlock} />
       </View>
     );
   };
 
-  const getViewByBlockType = () => {
-    switch (block.type) {
+  const getViewByBlockType = forBlock => {
+    switch (forBlock.type) {
+      case articleBlockType.ARTICLE_BLOCK_TYPE_SECTION:
+        return typeSection(forBlock);
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT:
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING:
-        return typeText();
+        return typeText(forBlock);
       case articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST:
-        return typeTextDefinitionList();
+        return typeTextDefinitionList(forBlock);
       case articleBlockType.ARTICLE_BLOCK_TYPE_CODE:
-        return typeCode();
+        return typeCode(forBlock);
       case articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW:
-        return typeWebView();
+        return typeWebView(forBlock);
       default:
         return <Text>Something went crazy wrong :(</Text>;
     }
   };
 
-  return getViewByBlockType();
+  return getViewByBlockType(block);
 };
 
 const styles = StyleSheet.create({

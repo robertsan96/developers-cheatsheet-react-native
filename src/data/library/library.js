@@ -188,6 +188,157 @@ export default [
     title: "HTML Tags & Instructions",
     data: [
       {
+        id: 92324,
+        title: "Address",
+        shortDescription: "Defines contact information.",
+        language: "html",
+        tag: "<dd></dd>",
+        articleBlocks: [
+          {
+            type: "ARTICLE_BLOCK_TYPE_SECTION",
+            title: "Description",
+            data: [
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Definition"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data:
+                  "The <address> tag provides author information about one document or article."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data:
+                  "If the <address> element is inside the <body> element, it represents " +
+                  "contact information for the document."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data:
+                  "If the <address> element is inside the <article> element, it represents " +
+                  "the contact information for that article."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Notes"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data:
+                  "The text inside the <address> tag element usually renders in italic. Most browsers will add " +
+                  "a line break before and after the address element."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Element"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_CODE",
+                language: "html",
+                data: React
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Rendered"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_WEBVIEW",
+                webViewHeight: 40,
+                data: "<address>Timisoara, Romania</address>"
+              }
+            ]
+          },
+          {
+            type: "ARTICLE_BLOCK_TYPE_SECTION",
+            title: "Support",
+            data: [
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Browser"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST",
+                data: [
+                  {
+                    element: "Chrome",
+                    definition: "supported"
+                  },
+                  {
+                    element: "Firefox",
+                    definition: "supported"
+                  },
+                  {
+                    element: "IE",
+                    definition: "not supported"
+                  }
+                ]
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "HTML Versions"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST",
+                data: [
+                  {
+                    element: "HTML 4.01",
+                    definition:
+                      "in HTML4.01 the <article> tag is not supported, so if <address> is used, " +
+                      "it will only represent the author of the document."
+                  },
+                  {
+                    element: "HTML5",
+                    definition: "supported"
+                  }
+                ]
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Default CSS Settings"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_CODE",
+                language: "css",
+                data: "address { display: block; font-style: italic; }"
+              }
+            ]
+          },
+          {
+            type: "ARTICLE_BLOCK_TYPE_SECTION",
+            title: "Examples",
+            data: [
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Author of the article"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data: "In this example we will set the author of an article."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_CODE",
+                language: "html",
+                data: "<article><address>Robert Sandru</address></article>"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
+                data: "Author of the document"
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_TEXT",
+                data: "In this example we will set the author of a document."
+              },
+              {
+                type: "ARTICLE_BLOCK_TYPE_CODE",
+                language: "html",
+                data: "<body><address>Robert Sandru</address></body>"
+              }
+            ]
+          }
+        ]
+      },
+      {
         id: 900,
         title: "Comments",
         shortDescription:
@@ -391,7 +542,7 @@ export default [
                 definition: "opens the linked document in the same frame."
               },
               {
-                element: "_parent",
+                element: "",
                 definition: "opens the linked document in the parent frame."
               },
               {
@@ -717,7 +868,7 @@ export default [
           {
             type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
             data:
-              "After the image, there is a map element with the name attribute with some area elements inside."
+              "After the image, there is a map element with the name attribute with an area element inside."
           },
           {
             type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
@@ -887,7 +1038,7 @@ export default [
                 definition: "opens the linked document in the same frame."
               },
               {
-                element: "_parent",
+                element: "",
                 definition: "opens the linked document in the parent frame."
               },
               {
@@ -902,10 +1053,62 @@ export default [
       {
         id: 906,
         title: "Article",
-        shortDescription: "Define an article.",
+        shortDescription: "Define a self-contained article.",
         language: "html",
-        tag: "<article>♥️ SEO</article>",
-        articleBlocks: []
+        tag: "<article></article>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "One article must be independent as content from the rest of the page. " +
+              "Defined articles should be shared independently."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "Even if the user doesn't see any difference, crawlers and browsers definitely do. " +
+              "Robots will correctly index your website so you SEO (Search Engine Optimization) will be improved."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Let's write"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data: "We are going to define two independent articles below."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<article>\n\t" +
+              "<h4>iPhone 11 PRO MAX</h4>\n\t" +
+              "<p>One of the major Apple products in 2019</p> \n" +
+              "</article>\n" +
+              "<article>\n\t" +
+              "<h4>Samsung Galaxy Note 10</h4>\n\t" +
+              "<p>Samsung just released the new Galaxt Note.</p> \n" +
+              "</article>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "The output of the following code is simply made of two headings and two paragraphs."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 180,
+            data:
+              "<article>\n\t" +
+              "<h4>iPhone 11 PRO MAX</h4>\n\t" +
+              "<p>One of the major Apple products in 2019</p> \n" +
+              "</article>\n" +
+              "<article>\n\t" +
+              "<h4>Samsung Galaxy Note 10</h4>\n\t" +
+              "<p>Samsung just released the new Galaxt Note.</p> \n" +
+              "</article>"
+          }
+        ]
       },
       {
         id: 907,
@@ -913,24 +1116,99 @@ export default [
         shortDescription:
           "Define a portion of a document whose content is indirectly related to the main content.",
         language: "html",
-        tag: "<aside>Gaming on Linux</aside>",
-        articleBlocks: []
+        tag: "<aside></aside>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "The <aside> element helps us add some content that is indirectly related to the main content. " +
+              "This means that if you write an article about how to capture pictures correctly on Apple devices, " +
+              "you could create an aside element to add some extra information about the device you were referring to."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Example"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<p>\n\t" +
+              "In order to capture incredible photos \n\t" +
+              "on the new iPhone, open the Camera App, \n\t" +
+              "focus on the subject and capture!\n" +
+              "</p>\n" +
+              "<aside>\n\t" +
+              "<h5>iPhone 11 PRO Max</h5>\n\t" +
+              "<p>\n\t\t" +
+              "iPhone 11 PRO Max is the latest \n\t\t" +
+              "flagship from Apple with 3 cameras \n\t" +
+              "</p>\n" +
+              "</aside>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data: "The code above will render as that:"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 200,
+            data:
+              "<p>\n\t" +
+              "In order to capture incredible photos \n\t" +
+              "on the new iPhone, open the Camera App, \n\t" +
+              "focus on the subject and capture!\n" +
+              "</p>\n" +
+              "<aside>\n\t" +
+              "<h5>iPhone 11 PRO Max</h5>\n\t" +
+              "<p>\n\t\t" +
+              "iPhone 11 PRO Max is the latest \n\t\t" +
+              "flagship from Apple with 3 cameras \n\t" +
+              "</p>\n" +
+              "</aside>"
+          }
+        ]
       },
-      {
-        id: 908,
-        title: "Audio",
-        shortDescription: "Defines music or other audio streams.",
-        language: "html",
-        tag: "<audio>Gaming on Linux</audio>",
-        articleBlocks: []
-      },
+      // {
+      //   id: 908,
+      //   title: "Audio",
+      //   shortDescription: "Defines music or other audio streams.",
+      //   language: "html",
+      //   tag: "<audio>Gaming on Linux</audio>",
+      //   articleBlocks: []
+      // },
       {
         id: 909,
         title: "Bold",
         shortDescription: "Defines a portion of text that has to be bolded.",
         language: "html",
-        tag: "<b>Important text</b>",
-        articleBlocks: []
+        tag: "<b></b>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "Bold text will help you make some text heavy. This way, " +
+              "your users will easily evidentiate important points of the document."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Example"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data: "<p>This is <b>so important</b> for me</p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data: "When rendered, the text will become:"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 30,
+            data: "<p>This is <b>so important</b> for me</p>"
+          }
+        ]
       },
       {
         id: 910,
@@ -938,8 +1216,126 @@ export default [
         shortDescription:
           "Defines the base URL of the document, making relative URLs a breeze.",
         language: "html",
-        tag: "<base href='http://mysite.com/'>",
-        articleBlocks: []
+        tag: "<base>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "In order to use relative URLs correctly, you have to define the base URL " +
+              "in the document head, so the browser will know how to compute routes."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "absolute url",
+                definition:
+                  "the exact, full path of the resource \n" +
+                  "https://example.com/chairs"
+              },
+              {
+                element: "relative url",
+                definition:
+                  "shorter, more convenient and portable \n" +
+                  "base url + chairs"
+              }
+            ]
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Absolute vs Relative"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "The following example shows the difference between using the absolute " +
+              "path and relative path. Using relative path is easier and more convenient " +
+              "because it's portable. Imagine moving your website from one domain to another " +
+              "and by using absolute paths, you would have to go in all your files and change href " +
+              "and image sources."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<!-- Absolute URL --> \n" +
+              "<a href='http://example.com/chairs'>Chairs</a>\n\n" +
+              "<!-- Relative URL -->\n" +
+              "<a href='chairs'>Chairs</a>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "Anyway, in order to make relative URLs work correctly, you have to add the base element " +
+              "in the head of the document."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Example"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<!DOCTYPE html>\n" +
+              "<html>\n\t" +
+              "<head>\n\t\t" +
+              "<title>Test</title>\n\t\t" +
+              "<base href='http://example.com/' />\n\t" +
+              "</head>\n\t" +
+              "<body>\n\t\t" +
+              "<!-- This route will point to: \n\t\t https://example.com/chairs -->\n\t\t" +
+              "<a href='chairs'>Chairs</a>\n\t" +
+              "</body>\n" +
+              "</html>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attributes"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "href",
+                definition: "your website's url: https://example.com/"
+              },
+              {
+                element: "target",
+                definition:
+                  "specifying the target in the base element, all the anchors in " +
+                  "the document will inherit it."
+              }
+            ]
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attributes target"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "_blank",
+                definition:
+                  "opens the linked document in a new window or a new tab."
+              },
+              {
+                element: "_self",
+                definition: "opens the linked document in the same frame."
+              },
+              {
+                element: "_parent",
+                definition: "opens the linked document in the parent frame."
+              },
+              {
+                element: "_top",
+                definition:
+                  "opens the linked document on top the current document."
+              }
+            ]
+          }
+        ]
       },
       {
         id: 911,
@@ -948,16 +1344,87 @@ export default [
           "Defines a portion of a text that might be formatted in a different direction.",
         language: "html",
         tag: "<bdi></bdi>",
-        articleBlocks: []
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "The <bdi> element helps isolating (usually) user defined input that might " +
+              "be formatted in different directions. Some languages are written from right to left. "
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Example"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data: "<p><bdi>This هاتف is just awesome.</bdi></p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 40,
+            data: "<p><bdi>This هاتف is just awesome.</bdi></p>"
+          }
+        ]
       },
       {
-        id: 911,
+        id: 9951,
         title: "Bi-Directional Override",
         shortDescription:
           "Defines a portion of a text that should be formatted in a defined direction.",
         language: "html",
-        tag: "<bdo dir='rtl'>Reverse me</bdo>",
-        articleBlocks: []
+        tag: "<bdo dir='rtl'></bdo>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "When working with (especially) with user defined input, you might " +
+              "want to make sure that the text is in the correct direction."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Example"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<p>\n\t<bdo dir='rtl'>\n\t\tThis text is from right to left\n\t</bdo>\n</p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 40,
+            data: "<p><bdo dir='rtl'>This text is from right to left</bdo></p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<p>\n\t<bdo dir='rtl'>\n\t\tThis text is from left to right\n\t</bdo>\n</p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 40,
+            data: "<p><bdo dir='ltr'>This text is from left to right</bdo></p>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attribute dir"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "ltr",
+                definition: "from left to right."
+              },
+              {
+                element: "rtl",
+                definition: "from right to left."
+              }
+            ]
+          }
+        ]
       },
       {
         id: 912,
