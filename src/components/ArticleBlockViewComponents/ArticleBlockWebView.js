@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import WebView from "react-native-webview";
 import { PRIMARY_COLOR, GRAY } from "../../constants/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -25,11 +25,16 @@ const ArticleBlockWebView = ({ block }) => {
     <View style={{ borderColor: GRAY.hex, borderWidth: 1 }}>
       {webViewComponent()}
       <TouchableOpacity onPress={reload}>
-        <MaterialCommunityIcons
-          size={32}
-          name={"reload"}
-          color={PRIMARY_COLOR.hex}
-        />
+        <View style={styles.webViewButtonsRow}>
+          <View style={styles.webViewButton}>
+            <MaterialCommunityIcons
+              size={18}
+              name={"reload"}
+              color={PRIMARY_COLOR.hex}
+            />
+            <Text>Reload</Text>
+          </View>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -38,6 +43,15 @@ const ArticleBlockWebView = ({ block }) => {
 const styles = StyleSheet.create({
   webView: {
     width: "100%"
+  },
+  webViewButtonsRow: {
+    flexDirection: "row",
+    padding: 10
+  },
+  webViewButton: {
+    flexDirection: "row",
+    alignContent: "space-between",
+    alignSelf: "baseline"
   }
 });
 
