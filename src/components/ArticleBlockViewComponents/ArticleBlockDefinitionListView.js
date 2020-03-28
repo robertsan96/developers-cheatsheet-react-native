@@ -7,6 +7,7 @@ const ArticleBlockDefinitionListView = ({ block }) => {
     <>
       {block.data.map((d, index) => (
         <View
+          key={Math.random()}
           style={{
             ...styles.blockWrapperRow,
             backgroundColor:

@@ -692,8 +692,212 @@ export default [
         title: "Area",
         shortDescription: "Define a clickable area inside an image-map.",
         language: "html",
-        tag: "<area shape='rect' coords='90, 30, 3'>",
-        articleBlocks: []
+        tag: "<area>",
+        articleBlocks: [
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "Using an image-map, one can easily click on certain areas of an image. " +
+              "Having this feature out of the box, you can create awesome explained content."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Let's map"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "We're going to use Google's logo in this example. Looking at the code below, " +
+              "you'll notice that we loaded an image using the <img /> element and added the " +
+              "following attributes: a width of 200px, a height of 70px, an alternate text just " +
+              "in case the image doesn't load anymore, and the most important for our example, " +
+              "the usemap attribute. The attribute value must reflect the name of the map " +
+              "with a hashtag before."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "After the image, there is a map element with the name attribute with some area elements inside."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_CODE,
+            language: "html",
+            data:
+              "<img\n\t" +
+              "src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'\n\t" +
+              "width='200'\n\t" +
+              "height='70'\n\t" +
+              "alt='Google Logo'\n\t" +
+              "usemap='#googlemap'" +
+              "/>\n" +
+              "<map name='googlemap'>\n\t" +
+              "<area\n\t\t" +
+              "shape='rect'\n\t\t" +
+              "coords='0, 0, 50, 70'\n\t\t" +
+              "alt='G'\n\t\t" +
+              "href='https://www.google.com/'" +
+              "/>\n" +
+              "</map>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT,
+            data:
+              "Running this example, we will get a Google logo with a clickable area. The zone " +
+              "you can click on, is the G letter. Once clicked, the user is going to be redirected " +
+              "to Google."
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_WEBVIEW,
+            webViewHeight: 150,
+            data:
+              "<img\n\t" +
+              "src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'\n\t" +
+              "width='200'\n\t" +
+              "height='70'\n\t" +
+              "alt='Google Logo'\n\t" +
+              "usemap='#googlemap'" +
+              "/>\n" +
+              "<map name='googlemap'>\n\t" +
+              "<area\n\t\t" +
+              "shape='rect'\n\t\t" +
+              "coords='0, 0, 50, 70'\n\t\t" +
+              "alt='G'\n\t\t" +
+              "href='https://www.google.com/'" +
+              "/>\n" +
+              "</map>"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attributes"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "alt",
+                definition: "Alternate text for the area."
+              },
+              {
+                element: "coords",
+                definition:
+                  "The shape of the area will be created at these coordinates."
+              },
+              {
+                element: "download",
+                definition:
+                  "The target will be downloaded when the user clicks on the area."
+              },
+              {
+                element: "href",
+                definition: "The address for the area."
+              },
+              {
+                element: "hreflang",
+                definition: "Language of the target address."
+              },
+              {
+                element: "media",
+                definition: undefined
+              },
+              {
+                element: "rel",
+                definition:
+                  "Relationship between the current document and target."
+              },
+              {
+                element: "shape",
+                definition: "The shape type of the area."
+              },
+              {
+                element: "target",
+                definition: "Where to open the target."
+              },
+              {
+                element: "type",
+                definition: "Media type of the target."
+              }
+            ]
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attribute shape"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "rect",
+                definition: "The shape of the area will be a rectangle."
+              },
+              {
+                element: "circle",
+                definition: "The shape of the area will be a circle."
+              },
+              {
+                element: "poly",
+                definition: "The shape of the area will be a polygon."
+              }
+            ]
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attribute rel"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "author",
+                definition:
+                  "The linked document represents details about the author."
+              },
+              {
+                element: "bookmark",
+                definition: "The linked document is a bookmark."
+              },
+              {
+                element: "external",
+                definition:
+                  "The linked document is external. Usually cross-domain."
+              },
+              {
+                element: "help",
+                definition: "The linked document is a help-like document."
+              },
+              {
+                element: "license",
+                definition: "The linked document reperesents a license."
+              }
+            ]
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_HEADING,
+            data: "Attribute target"
+          },
+          {
+            type: articleBlockType.ARTICLE_BLOCK_TYPE_TEXT_DEFINITION_LIST,
+            data: [
+              {
+                element: "_blank",
+                definition:
+                  "opens the linked document in a new window or a new tab."
+              },
+              {
+                element: "_self",
+                definition: "opens the linked document in the same frame."
+              },
+              {
+                element: "_parent",
+                definition: "opens the linked document in the parent frame."
+              },
+              {
+                element: "_top",
+                definition:
+                  "opens the linked document on top the current document."
+              }
+            ]
+          }
+        ]
       },
       {
         id: 906,
