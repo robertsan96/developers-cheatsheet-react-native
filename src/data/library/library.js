@@ -236,7 +236,7 @@ export default [
               {
                 type: "ARTICLE_BLOCK_TYPE_CODE",
                 language: "html",
-                data: React
+                data: "<address><p>Timisoara, Romania</p></address>"
               },
               {
                 type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
@@ -319,7 +319,7 @@ export default [
               {
                 type: "ARTICLE_BLOCK_TYPE_CODE",
                 language: "html",
-                data: "<article><address>Robert Sandru</address></article>"
+                data: "<article><address>Anonymous</address></article>"
               },
               {
                 type: "ARTICLE_BLOCK_TYPE_TEXT_HEADING",
@@ -332,7 +332,7 @@ export default [
               {
                 type: "ARTICLE_BLOCK_TYPE_CODE",
                 language: "html",
-                data: "<body><address>Robert Sandru</address></body>"
+                data: "<body><address>Anonymous</address></body>"
               }
             ]
           }

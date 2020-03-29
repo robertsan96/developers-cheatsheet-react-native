@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import WebView from "react-native-webview";
-import { PRIMARY_COLOR, GRAY } from "../../constants/colors";
+import { THEMES, GRAY } from "../../constants/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useColorScheme } from "react-native-appearance";
 
 const ArticleBlockWebView = ({ block }) => {
+  const colorScheme = useColorScheme();
   const [webViewReloadKey, setWebViewReloadKey] = useState(Math.random());
   const reload = () => {
     setWebViewReloadKey(Math.random);
@@ -30,7 +32,7 @@ const ArticleBlockWebView = ({ block }) => {
             <MaterialCommunityIcons
               size={18}
               name={"reload"}
-              color={PRIMARY_COLOR.hex}
+              color={THEMES.DEFAULT[colorScheme].PRIMARY_COLOR.hex}
             />
             <Text>Reload</Text>
           </View>

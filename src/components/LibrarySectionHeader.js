@@ -2,11 +2,22 @@ import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 
-import { PRIMARY_COLOR, rgbaStringFromColor } from "../constants/colors";
+import { THEMES, rgbaStringFromColor } from "../constants/colors";
+import { useColorScheme } from "react-native-appearance";
 
 const LibrarySectionHeader = ({ title }) => {
+  const colorScheme = useColorScheme();
+
   return (
-    <View style={styles.wrapper}>
+    <View
+      style={{
+        ...styles.wrapper,
+        backgroundColor: rgbaStringFromColor(
+          THEMES.DEFAULT[colorScheme].PRIMARY_COLOR,
+          1
+        )
+      }}
+    >
       <Text style={styles.title}>{title}</Text>
     </View>
   );
@@ -18,8 +29,6 @@ LibrarySectionHeader.propTypes = {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: rgbaStringFromColor(PRIMARY_COLOR, 1),
-
     flexDirection: "column",
     alignContent: "center",
     justifyContent: "center"

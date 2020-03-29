@@ -2,8 +2,10 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import SyntaxHighlighter from "react-native-syntax-highlighter";
 
-import { GRAY, rgbaStringFromColor, YELLOW } from "../constants/colors";
+import { GRAY, rgbaStringFromColor, YELLOW, THEMES } from "../constants/colors";
 import { STAR_ICON } from "../constants/images";
+
+import { useColorScheme } from "react-native-appearance";
 
 import PropTypes from "prop-types";
 
@@ -14,6 +16,17 @@ const rowConfiguration = {
 };
 
 const LibrarySectionRow = ({ item, index, rowConfig = rowConfiguration }) => {
+  const colorSchema = useColorScheme();
+
+  const sectionRowColor = index => {
+    const color =
+      index % 2 === 0
+        ? THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_EVEN_COLOR
+        : THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_ODD_COLOR;
+
+    console.log(rgbaStringFromColor(color, 0.5), index);
+    return rgbaStringFromColor(color, 0.5);
+  };
   const snippetView = () => {
     return item.tag !== undefined ? (
       <View style={{ marginLeft: -10 }}>
@@ -27,7 +40,7 @@ const LibrarySectionRow = ({ item, index, rowConfig = rowConfiguration }) => {
     <View
       style={{
         ...styles.wrapper,
-        backgroundColor: index % 2 == 0 ? rgbaStringFromColor(GRAY, 0.5) : ""
+        backgroundColor: sectionRowColor(index)
       }}
     >
       <View style={styles.rowWrapper}>

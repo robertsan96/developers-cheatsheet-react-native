@@ -6,8 +6,11 @@ import LibraryList from "../components/LibraryList";
 import screens from "../constants/screens";
 
 import { useSelector } from "react-redux";
+import { useColorScheme } from "react-native-appearance";
+import { THEMES } from "../constants/colors";
 
 const LibraryScreen = ({ navigation }) => {
+  const colorScheme = useColorScheme();
   const library = useSelector(state => state.libraryReducer);
   const onLibraryRow = article => {
     navigation.navigate(screens.LIBRARY_READ_SCREEN.name, {
@@ -17,7 +20,13 @@ const LibraryScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.wrapper}>
+    <View
+      style={{
+        ...styles.wrapper,
+        backgroundColor:
+          THEMES.DEFAULT[colorScheme].PRIMARY_BACKGROUND_COLOR.hex
+      }}
+    >
       <LibraryList data={library.library} onLibraryRow={onLibraryRow} />
     </View>
   );
