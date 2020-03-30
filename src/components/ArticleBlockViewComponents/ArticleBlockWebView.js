@@ -11,6 +11,9 @@ const ArticleBlockWebView = ({ block }) => {
   const reload = () => {
     setWebViewReloadKey(Math.random);
   };
+  const textColor = () => {
+    return THEMES.DEFAULT[colorScheme].SECTION_ROW_DESCRIPTION_COLOR.hex;
+  };
   const webViewComponent = () => {
     return (
       <WebView
@@ -34,7 +37,7 @@ const ArticleBlockWebView = ({ block }) => {
               name={"reload"}
               color={THEMES.DEFAULT[colorScheme].PRIMARY_COLOR.hex}
             />
-            <Text>Reload</Text>
+            <Text style={{ color: textColor() }}>Reload</Text>
           </View>
         </View>
       </TouchableOpacity>

@@ -1,13 +1,24 @@
 import React from "react";
 import articleBlockType from "../../constants/article-block";
 import { Text, StyleSheet } from "react-native";
+import { useColorScheme } from "react-native-appearance";
+import { THEMES } from "../../constants/colors";
 
 const ArticleBlockTextView = ({ block }) => {
+  const colorSchema = useColorScheme();
+  const textColor = () => {
+    return THEMES.DEFAULT[colorSchema].SECTION_ROW_DESCRIPTION_COLOR.hex;
+  };
+
   const typeText = () => {
-    return <Text>{block.data}</Text>;
+    return <Text style={{ color: textColor() }}>{block.data}</Text>;
   };
   const typeTextHeading = () => {
-    return <Text style={styles.textHeading}>{block.data}</Text>;
+    return (
+      <Text style={{ ...styles.textHeading, color: textColor() }}>
+        {block.data}
+      </Text>
+    );
   };
 
   const getBlockType = () => {

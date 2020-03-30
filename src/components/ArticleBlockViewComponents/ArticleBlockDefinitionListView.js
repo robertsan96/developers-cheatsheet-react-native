@@ -1,8 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { GRAY, rgbaStringFromColor } from "../../constants/colors";
+import { GRAY, rgbaStringFromColor, THEMES } from "../../constants/colors";
+import { useColorScheme } from "react-native-appearance";
 
 const ArticleBlockDefinitionListView = ({ block }) => {
+  const colorSchema = useColorScheme();
+  const sectionRowColor = index => {
+    const color =
+      index % 2 === 0
+        ? THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_EVEN_COLOR
+        : THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_ODD_COLOR;
+
+    return rgbaStringFromColor(color, 0.5);
+  };
+  const textColor = () => {
+    return THEMES.DEFAULT[colorSchema].SECTION_ROW_DESCRIPTION_COLOR.hex;
+  };
   return (
     <>
       {block.data.map((d, index) => (
@@ -10,14 +23,19 @@ const ArticleBlockDefinitionListView = ({ block }) => {
           key={Math.random()}
           style={{
             ...styles.blockWrapperRow,
-            backgroundColor:
-              index % 2 === 0 ? rgbaStringFromColor(GRAY, 0.8) : ""
+            backgroundColor: sectionRowColor(index)
           }}
         >
-          <Text style={styles.textDefinitionElement}>{d.element}</Text>
-          {d.definition && <Text> - </Text>}
+          <Text style={{ ...styles.textDefinitionElement, color: textColor() }}>
+            {d.element}
+          </Text>
+          {d.definition && <Text style={{ color: textColor() }}> - </Text>}
           {d.definition && (
-            <Text style={styles.textDefinitionDefinition}>{d.definition}</Text>
+            <Text
+              style={{ ...styles.textDefinitionDefinition, color: textColor() }}
+            >
+              {d.definition}
+            </Text>
           )}
         </View>
       ))}
