@@ -1,6 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import SyntaxHighlighter from "react-native-syntax-highlighter";
+import {
+  darcula as prismDark,
+  prism as prismLight
+} from "react-syntax-highlighter/dist/styles/prism";
 
 import { GRAY, rgbaStringFromColor, YELLOW, THEMES } from "../constants/colors";
 import { STAR_ICON } from "../constants/images";
@@ -26,10 +30,18 @@ const LibrarySectionRow = ({ item, index, rowConfig = rowConfiguration }) => {
 
     return rgbaStringFromColor(color, 0.5);
   };
+  const snippetViewColor = () => {
+    return colorSchema === "light" ? prismLight : prismDark;
+  };
+
   const snippetView = () => {
     return item.tag !== undefined ? (
       <View style={{ marginLeft: -10 }}>
-        <SyntaxHighlighter language={item.language} highlighter="prism">
+        <SyntaxHighlighter
+          language={item.language}
+          highlighter="prism"
+          style={snippetViewColor()}
+        >
           {item.tag}
         </SyntaxHighlighter>
       </View>
