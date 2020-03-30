@@ -24,7 +24,6 @@ const LibrarySectionRow = ({ item, index, rowConfig = rowConfiguration }) => {
         ? THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_EVEN_COLOR
         : THEMES.DEFAULT[colorSchema].SECTION_ROW_STRIP_ODD_COLOR;
 
-    console.log(rgbaStringFromColor(color, 0.5), index);
     return rgbaStringFromColor(color, 0.5);
   };
   const snippetView = () => {
@@ -46,11 +45,25 @@ const LibrarySectionRow = ({ item, index, rowConfig = rowConfiguration }) => {
       <View style={styles.rowWrapper}>
         <View style={styles.textLayer}>
           {rowConfig.shouldShowTitle && (
-            <Text style={styles.title}>{item.title}</Text>
+            <Text
+              style={{
+                ...styles.title,
+                color: THEMES.DEFAULT[colorSchema].SECTION_ROW_TITLE_COLOR.hex
+              }}
+            >
+              {item.title}
+            </Text>
           )}
           {rowConfig.shouldShowShortDescription &&
             item.shortDescription !== undefined && (
-              <Text style={styles.shortDescription}>
+              <Text
+                style={{
+                  ...styles.shortDescription,
+                  color:
+                    THEMES.DEFAULT[colorSchema].SECTION_ROW_DESCRIPTION_COLOR
+                      .hex
+                }}
+              >
                 {item.shortDescription}
               </Text>
             )}
