@@ -2,6 +2,14 @@ export const HTML_COLOR = {
   hex: "#E44D26",
   rgba: { r: 228, g: 77, b: 38, a: 1 }
 };
+export const CSS_COLOR = {
+  hex: "#264DE4",
+  rgba: { r: 38, g: 77, b: 228, a: 1 }
+};
+export const JS_COLOR = {
+  hex: "#EDD718",
+  rgba: { r: 237, g: 215, b: 24, a: 1 }
+};
 
 export const WHITE = { hex: "#ffffff", rgba: { r: 255, g: 255, b: 255, a: 1 } };
 export const BLACK = { hex: "#000000", rgba: { r: 0, g: 0, b: 0, a: 1 } };
@@ -35,4 +43,4 @@ export const THEMES = {
   }
 };
 
-export default { HTML_COLOR, WHITE };
+export default { HTML_COLOR, CSS_COLOR, JS_COLOR, WHITE };

@@ -1,14 +1,41 @@
 import React from "react";
-import { Text, View, SectionList } from "react-native";
+import { Text, View, SectionList, StyleSheet } from "react-native";
+
+import HomeSectionHeader from "../components/home/HomeSectionHeader";
+import HomeSectionItem from "../components/home/HomeSectionItem";
+import colors from "../constants/colors";
 
 const HomeScreen = () => {
   const homeSections = [
     {
-      title: "da",
+      title: "Libraries",
       data: [
-        {
-          title: "nu"
-        }
+        [
+          {
+            title: "HTML5",
+            icon: {
+              name: "language-html5",
+              color: colors.HTML_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "da",
+            icon: {
+              name: "language-css3",
+              color: colors.CSS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "da",
+            icon: {
+              name: "language-javascript",
+              color: colors.JS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          }
+        ]
       ]
     }
   ];
@@ -16,11 +43,11 @@ const HomeScreen = () => {
     <View>
       <SectionList
         sections={homeSections}
-        keyExtractor={item => {
-          item.title;
-        }}
-        renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
-        renderItem={({ item }) => <Text>{item.title}</Text>}
+        keyExtractor={() => Math.random().toString()}
+        renderSectionHeader={({ section }) => (
+          <HomeSectionHeader section={section} />
+        )}
+        renderItem={({ item }) => <HomeSectionItem item={item} />}
       />
     </View>
   );
