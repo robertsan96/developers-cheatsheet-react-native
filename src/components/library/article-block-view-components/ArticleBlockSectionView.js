@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useColorScheme } from "react-native-appearance";
-import { THEMES } from "../../constants/colors";
+import { THEMES } from "../../../constants/colors";
 
 const ArticleBlockSectionView = ({ block, children }) => {
   const colorSchema = useColorScheme();

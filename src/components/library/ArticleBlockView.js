@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import articleBlockType from "../constants/article-block";
-import ArticleBlockWebView from "./ArticleBlockViewComponents/ArticleBlockWebView";
-import ArticleBlockCodeView from "./ArticleBlockViewComponents/ArticleBlockCodeView";
-import ArticleBlockTextView from "./ArticleBlockViewComponents/ArticleBlockTextView";
-import ArticleBlockDefinitionListView from "./ArticleBlockViewComponents/ArticleBlockDefinitionListView";
-import ArticleBlockSectionView from "./ArticleBlockViewComponents/ArticleBlockSectionView";
+import articleBlockType from "../../constants/article-block";
+import ArticleBlockWebView from "./article-block-view-components/ArticleBlockWebView";
+import ArticleBlockCodeView from "./article-block-view-components/ArticleBlockCodeView";
+import ArticleBlockTextView from "./article-block-view-components/ArticleBlockTextView";
+import ArticleBlockDefinitionListView from "./article-block-view-components/ArticleBlockDefinitionListView";
+import ArticleBlockSectionView from "./article-block-view-components/ArticleBlockSectionView";
 
 const ArticleBlockView = ({ block }) => {
   const typeSection = forBlock => {

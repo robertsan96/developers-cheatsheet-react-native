@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import WebView from "react-native-webview";
-import { THEMES, GRAY } from "../../constants/colors";
+import { THEMES, GRAY } from "../../../constants/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useColorScheme } from "react-native-appearance";
 

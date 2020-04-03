@@ -6,8 +6,8 @@ import {
   prism as prismLight
 } from "react-syntax-highlighter/dist/styles/prism";
 
-import { rgbaStringFromColor, YELLOW, THEMES } from "../constants/colors";
-import { STAR_ICON } from "../constants/images";
+import { rgbaStringFromColor, YELLOW, THEMES } from "../../constants/colors";
+import { STAR_ICON } from "../../constants/images";
 
 import { useColorScheme } from "react-native-appearance";
 

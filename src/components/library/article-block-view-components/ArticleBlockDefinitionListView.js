@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { GRAY, rgbaStringFromColor, THEMES } from "../../constants/colors";
+import { GRAY, rgbaStringFromColor, THEMES } from "../../../constants/colors";
 import { useColorScheme } from "react-native-appearance";
 
 const ArticleBlockDefinitionListView = ({ block }) => {

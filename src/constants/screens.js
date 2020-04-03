@@ -1,4 +1,8 @@
 export default {
+  HOME_SCREEN: {
+    key: "screens/Home",
+    name: "Home"
+  },
   LIBRARY_SCREEN: {
     key: "screens/Library",
     name: "Library"

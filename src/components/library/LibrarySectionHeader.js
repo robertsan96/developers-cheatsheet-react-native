@@ -2,7 +2,7 @@ import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 
-import { THEMES, rgbaStringFromColor } from "../constants/colors";
+import { THEMES, rgbaStringFromColor } from "../../constants/colors";
 import { useColorScheme } from "react-native-appearance";
 
 const LibrarySectionHeader = ({ title }) => {

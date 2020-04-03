@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import { useSelector } from "react-redux";
-import ArticleBlockView from "../components/ArticleBlockView";
-import colors, { THEMES } from "../constants/colors";
+import ArticleBlockView from "../../components/library/ArticleBlockView";
+import colors, { THEMES } from "../../constants/colors";
 import { useColorScheme } from "react-native-appearance";
 
 const LibraryReadScreen = ({ route }) => {

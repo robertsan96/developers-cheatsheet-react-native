@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, SectionList, TouchableOpacity } from "react-native";
-import LibrarySectionHeader from "../components/LibrarySectionHeader";
+import LibrarySectionHeader from "./LibrarySectionHeader";
 
 import PropTypes from "prop-types";
 import LibrarySectionRow from "./LibrarySectionRow";

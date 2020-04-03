@@ -1,8 +1,8 @@
 import React from "react";
-import articleBlockType from "../../constants/article-block";
+import articleBlockType from "../../../constants/article-block";
 import { Text, StyleSheet } from "react-native";
 import { useColorScheme } from "react-native-appearance";
-import { THEMES } from "../../constants/colors";
+import { THEMES } from "../../../constants/colors";
 
 const ArticleBlockTextView = ({ block }) => {
   const colorSchema = useColorScheme();

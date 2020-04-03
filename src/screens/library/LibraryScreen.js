@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import LibraryList from "../components/LibraryList";
+import LibraryList from "../../components/library/LibraryList";
 
-import screens from "../constants/screens";
+import screens from "../../constants/screens";
 
 import { useSelector } from "react-redux";
 import { useColorScheme } from "react-native-appearance";
-import { THEMES } from "../constants/colors";
+import { THEMES } from "../../constants/colors";
 
 const LibraryScreen = ({ navigation }) => {
   const colorScheme = useColorScheme();

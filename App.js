@@ -10,8 +10,9 @@ import {
 import { createStackNavigator } from "@react-navigation/stack";
 import { AppearanceProvider, useColorScheme } from "react-native-appearance";
 
-import LibraryScreen from "./src/screens/LibraryScreen";
-import LibraryReadScreen from "./src/screens/LibraryReadScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import LibraryScreen from "./src/screens/library/LibraryScreen";
+import LibraryReadScreen from "./src/screens/library/LibraryReadScreen";
 
 import screens from "./src/constants/screens";
 
@@ -30,6 +31,10 @@ export default function App() {
       <AppearanceProvider>
         <NavigationContainer theme={theme}>
           <Stack.Navigator>
+            <Stack.Screen
+              name={screens.HOME_SCREEN.name}
+              component={HomeScreen}
+            />
             <Stack.Screen
               name={screens.LIBRARY_SCREEN.name}
               component={LibraryScreen}
