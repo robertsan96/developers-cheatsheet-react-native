@@ -4,8 +4,12 @@ import { Text, View, SectionList, StyleSheet } from "react-native";
 import HomeSectionHeader from "../components/home/HomeSectionHeader";
 import HomeSectionItem from "../components/home/HomeSectionItem";
 import colors from "../constants/colors";
+import screens from "../constants/screens";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+  const onPressElement = element => {
+    navigation.navigate(screens.LIBRARY_SCREEN.name);
+  };
   const homeSections = [
     {
       title: "Libraries",
@@ -13,6 +17,8 @@ const HomeScreen = () => {
         [
           {
             title: "HTML5",
+            enabled: true,
+            onPress: onPressElement,
             icon: {
               name: "language-html5",
               color: colors.HTML_COLOR,
@@ -20,7 +26,9 @@ const HomeScreen = () => {
             }
           },
           {
-            title: "da",
+            title: "CSS3",
+            enabled: false,
+            onPress: onPressElement,
             icon: {
               name: "language-css3",
               color: colors.CSS_COLOR,
@@ -28,10 +36,80 @@ const HomeScreen = () => {
             }
           },
           {
-            title: "da",
+            title: "JavaScript",
+            enabled: false,
+            onPress: onPressElement,
             icon: {
               name: "language-javascript",
               color: colors.JS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      title: "HTML",
+      data: [
+        [
+          {
+            title: "Code",
+            enabled: true,
+            icon: {
+              name: "code-not-equal-variant",
+              color: colors.HTML_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "Quiz",
+            enabled: true,
+            icon: {
+              name: "comment-question",
+              color: colors.CSS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "Learn Mode",
+            enabled: true,
+            icon: {
+              name: "notebook",
+              color: colors.PURPLE,
+              pack: "MaterialCommunityIcons"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      title: "CSS",
+      data: [
+        [
+          {
+            title: "Code",
+            enabled: true,
+            icon: {
+              name: "code-not-equal-variant",
+              color: colors.HTML_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "Quiz",
+            enabled: true,
+            icon: {
+              name: "comment-question",
+              color: colors.CSS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "Learn Mode",
+            enabled: true,
+            icon: {
+              name: "notebook",
+              color: colors.PURPLE,
               pack: "MaterialCommunityIcons"
             }
           }
