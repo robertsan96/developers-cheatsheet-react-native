@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import LibrarySectionRow from "./LibrarySectionRow";
 
 const LibraryList = ({ data, onLibraryRow = article => {} }) => {
-  // data[1].data = data[1].data.slice(0, 10); // TODO: Remove this
+  data[1].data = data[1].data.slice(0, 10); // TODO: Remove this
   return (
     <SectionList
       sections={data}

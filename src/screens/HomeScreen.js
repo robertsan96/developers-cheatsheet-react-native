@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
           },
           {
             title: "CSS3",
-            enabled: false,
+            enabled: true,
             onPress: onPressElement,
             icon: {
               name: "language-css3",
@@ -37,11 +37,21 @@ const HomeScreen = ({ navigation }) => {
           },
           {
             title: "JavaScript",
-            enabled: false,
+            enabled: true,
             onPress: onPressElement,
             icon: {
               name: "language-javascript",
               color: colors.JS_COLOR,
+              pack: "MaterialCommunityIcons"
+            }
+          },
+          {
+            title: "React",
+            enabled: true,
+            onPress: onPressElement,
+            icon: {
+              name: "react",
+              color: colors.REACT_COLOR,
               pack: "MaterialCommunityIcons"
             }
           }
