@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
+
 import colors, { THEMES } from "../constants/colors";
 import Logo from "../components/Logo";
 import FacebookButton from "../components/buttons/FacebookButton";
@@ -15,7 +16,7 @@ import GoogleButton from "../components/buttons/GoogleButton";
 
 const LoginScreen = () => {
   StatusBar.setBarStyle("light-content");
-  const [logoAnimationDone, setLogoAnimationDone] = useState(false);
+
   return (
     <View style={styles.wrapper}>
       <FadeInView style={styles.logoWrapper}>
