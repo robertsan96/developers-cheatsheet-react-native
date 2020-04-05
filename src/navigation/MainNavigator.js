@@ -12,6 +12,8 @@ import HomeScreen from "../screens/HomeScreen";
 import LibraryScreen from "../screens/library/LibraryScreen";
 import LibraryReadScreen from "../screens/library/LibraryReadScreen";
 
+import IntroNavigator from "./IntroNavigator";
+
 import screens from "../constants/screens";
 
 const MainStack = createStackNavigator();
@@ -32,6 +34,11 @@ const MainNavigator = () => {
   return (
     <NavigationContainer>
       <MainStack.Navigator>
+        <MainStack.Screen
+          name="IntroNavigator"
+          options={{ headerShown: false }}
+          component={IntroNavigator}
+        />
         <MainStack.Screen
           name="AuthNavigator"
           options={{ headerShown: false }}

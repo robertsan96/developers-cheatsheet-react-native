@@ -1,4 +1,8 @@
 export default {
+  INTRO_SCREEN: {
+    key: "screens/Intro",
+    name: "Intro",
+  },
   LOGIN_SCREEN: {
     key: "screens/Login",
     name: "Login",

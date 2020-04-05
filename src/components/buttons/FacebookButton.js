@@ -4,9 +4,9 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 import ProviderButton from "./ProviderButton";
 
-const FacebookButton = () => {
+const FacebookButton = ({ onPress = () => {} }) => {
   const provider = { name: "Facebook", color: colors.FACEBOOK_BLUE };
-  return <ProviderButton provider={provider} />;
+  return <ProviderButton onPress={onPress} provider={provider} />;
 };
 
 export default FacebookButton;

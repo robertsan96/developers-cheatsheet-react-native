@@ -9,6 +9,7 @@ const SlideInView = ({ style, children, time = 200, animationDone }) => {
     Animated.timing(slideInAnim, {
       toValue: 0,
       duration: time,
+      useNativeDriver: true,
     }).start(animationDone);
   }, []);
 

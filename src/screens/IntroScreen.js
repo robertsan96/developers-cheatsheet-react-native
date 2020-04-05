@@ -1,49 +1,14 @@
-import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  Alert,
-} from "react-native";
-
+import React from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors, { THEMES } from "../constants/colors";
-import Logo from "../components/Logo";
-
+import WaveView from "../components/animations/WaveView";
 import FadeInView from "../components/animations/FadeInView";
 import SlideInView from "../components/animations/SlideInView";
+import Logo from "../components/Logo";
+import OutlineButton from "../components/buttons/OutlineButton";
 
-import { TextInput } from "react-native-gesture-handler";
-
-import * as firebase from "firebase";
-
-const LoginScreen = () => {
-  StatusBar.setBarStyle("light-content");
-
-  const [email, setEmail] = useState("robertsandru96@gmail.com");
-  const [password, setPassword] = useState("roberst");
-
-  useEffect(() => {
-    const subscriber = firebase.auth().onAuthStateChanged(authStateChanged);
-  }, []);
-
-  const authStateChanged = (user) => {};
-
-  const login = () => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(
-        (da) => {
-          console.log(da);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  };
-
+const IntroScreen = () => {
   return (
     <View style={styles.wrapper}>
       <FadeInView style={styles.logoWrapper}>
@@ -59,28 +24,40 @@ const LoginScreen = () => {
       </FadeInView>
       <FadeInView>
         <SlideInView time={600}>
+          <Text style={styles.text2}>Welcome to Developer's Cheatsheet!</Text>
+        </SlideInView>
+      </FadeInView>
+      <FadeInView>
+        <SlideInView time={650}>
+          <WaveView>
+            <MaterialCommunityIcons
+              size={65}
+              name="hand"
+              color={colors.WHITE.hex}
+            />
+          </WaveView>
+        </SlideInView>
+      </FadeInView>
+      <FadeInView>
+        <SlideInView time={650}>
           <Text style={styles.text2}>
-            By logging in, you'll be able to enjoy Developer's Cheatsheet
-            goodies at their max!
+            We're proud having you onboard! We'll show you some of the app's
+            functionality right now.
           </Text>
         </SlideInView>
       </FadeInView>
       <FadeInView style={{ marginTop: 40 }}>
-        <SlideInView time={650}>
-          <TextInput value={email} />
-        </SlideInView>
+        <SlideInView time={650}></SlideInView>
       </FadeInView>
       <FadeInView style={{ marginTop: 10 }}>
         <SlideInView time={700}>
-          <TouchableOpacity onPress={() => console.log("google login")}>
-            <TextInput value={password} />
-          </TouchableOpacity>
+          <OutlineButton text="CONTINUE" />
         </SlideInView>
       </FadeInView>
       <FadeInView time={2500} style={{ marginTop: 40 }}>
         <SlideInView time={900}>
-          <TouchableOpacity onPress={login}>
-            <Text style={styles.text3}>Continue without sign in...</Text>
+          <TouchableOpacity>
+            <Text style={styles.text3}>Skip to the app...</Text>
           </TouchableOpacity>
         </SlideInView>
       </FadeInView>
@@ -107,7 +84,7 @@ const styles = StyleSheet.create({
   },
   text2: {
     padding: 20,
-    marginTop: 20,
+
     fontWeight: "400",
     fontSize: 14,
     textAlign: "center",
@@ -120,5 +97,4 @@ const styles = StyleSheet.create({
     color: colors.DARK_GREY.hex,
   },
 });
-
-export default LoginScreen;
+export default IntroScreen;

@@ -1,16 +1,19 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import colors from "../../constants/colors";
 
-const ProviderButton = ({ provider, onPress = () => {} }) => {
+const OutlineButton = ({
+  borderColor = colors.WHITE,
+  textColor = colors.WHITE,
+  text = "",
+  onPress = () => {},
+}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={{ ...styles.wrapper, borderColor: provider.color.hex }}
+      style={{ ...styles.wrapper, borderColor: borderColor.hex }}
     >
-      <Text style={{ ...styles.providerText, color: provider.color.hex }}>
-        {provider.name}
-      </Text>
+      <Text style={{ ...styles.buttonText, color: textColor.hex }}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
   },
-  providerText: {
+  buttonText: {
     textTransform: "uppercase",
     fontSize: 12,
     lineHeight: 40,
@@ -31,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProviderButton;
+export default OutlineButton;

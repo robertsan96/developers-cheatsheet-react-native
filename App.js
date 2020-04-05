@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 
@@ -11,7 +11,9 @@ import store from "./src/store";
 import MainNavigator from "./src/navigation/MainNavigator";
 
 export default function App() {
-  firebase.initializeApp(firebaseConfig);
+  useEffect(() => {
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+  });
   return (
     <Provider store={store}>
       <AppearanceProvider>
