@@ -7,6 +7,7 @@ import FadeInView from "../components/animations/FadeInView";
 import SlideInView from "../components/animations/SlideInView";
 import Logo from "../components/Logo";
 import OutlineButton from "../components/buttons/OutlineButton";
+import PopInView from "../components/animations/PopInView";
 
 const IntroScreen = () => {
   return (
@@ -29,13 +30,15 @@ const IntroScreen = () => {
       </FadeInView>
       <FadeInView>
         <SlideInView time={650}>
-          <WaveView>
-            <MaterialCommunityIcons
-              size={65}
-              name="hand"
-              color={colors.WHITE.hex}
-            />
-          </WaveView>
+          <PopInView>
+            <WaveView>
+              <MaterialCommunityIcons
+                size={65}
+                name="hand"
+                color={colors.WHITE.hex}
+              />
+            </WaveView>
+          </PopInView>
         </SlideInView>
       </FadeInView>
       <FadeInView>
